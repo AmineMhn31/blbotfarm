@@ -55,7 +55,7 @@ class BlumAPI:
 
 
 def main():
-    autorization_token = input('Введи токен авторизации Blum: ')
+    autorization_token = input('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNfZ3Vlc3QiOmZhbHNlLCJ0eXBlIjoiQUNDRVNTIiwiaXNzIjoiYmx1bSIsInN1YiI6IjA3YTIwYmZhLWEzOWItNGU1NS05ZDE1LTliMGZhMWUwZmYzOSIsImV4cCI6MTcyNzIwNTcxNCwiaWF0IjoxNzI3MjAyMTE0fQ.Xx0I1us5nMSjlDCV8-IkVgQVCAKkvzTHOX0DgNdMfbk')
 
     try:
         while True:

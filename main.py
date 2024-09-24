@@ -56,7 +56,7 @@ class BlumAPI:
 
 def main():
     # Replace input with hardcoded authorization token
-    autorization_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNfZ3Vlc3QiOmZhbHNlLCJ0eXBlIjoiQUNDRVNTIiwiaXNzIjoiYmx1bSIsInN1YiI6IjA3YTIwYmZhLWEzOWItNGU1NS05ZDE1LTliMGZhMWUwZmYzOSIsImV4cCI6MTcyNzIwNTcxNCwiaWF0IjoxNzI3MjAyMTE0fQ.Xx0I1us5nMSjlDCV8-IkVgQVCAKkvzTHOX0DgNdMfbk'
+    autorization_token = ''
 
     try:
         while True:

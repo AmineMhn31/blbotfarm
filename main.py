@@ -34,7 +34,7 @@ class BlumAPI:
     def get_balance(self):
         response = self.request('get', URL_BALANCE)
         if not response.ok:
-            raise Exception('Проблема при получении баланса!\nТекст ошибки с сервера: {response.text}')
+            raise Exception(f'Проблема при получении баланса!\nТекст ошибки с сервера: {response.text}')
         return response.json()
 
     def play_game(self):
@@ -55,7 +55,8 @@ class BlumAPI:
 
 
 def main():
-    autorization_token = input('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNfZ3Vlc3QiOmZhbHNlLCJ0eXBlIjoiQUNDRVNTIiwiaXNzIjoiYmx1bSIsInN1YiI6IjA3YTIwYmZhLWEzOWItNGU1NS05ZDE1LTliMGZhMWUwZmYzOSIsImV4cCI6MTcyNzIwNTcxNCwiaWF0IjoxNzI3MjAyMTE0fQ.Xx0I1us5nMSjlDCV8-IkVgQVCAKkvzTHOX0DgNdMfbk')
+    # Replace input with hardcoded authorization token
+    autorization_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNfZ3Vlc3QiOmZhbHNlLCJ0eXBlIjoiQUNDRVNTIiwiaXNzIjoiYmx1bSIsInN1YiI6IjA3YTIwYmZhLWEzOWItNGU1NS05ZDE1LTliMGZhMWUwZmYzOSIsImV4cCI6MTcyNzIwNTcxNCwiaWF0IjoxNzI3MjAyMTE0fQ.Xx0I1us5nMSjlDCV8-IkVgQVCAKkvzTHOX0DgNdMfbk'
 
     try:
         while True:
@@ -69,11 +70,11 @@ def main():
 
                 if choice == '1':
                     balance_data = blum_api.get_balance()
-                    avilable_balance = balance_data.get('availableBalance')
+                    available_balance = balance_data.get('availableBalance')
                     game_passes = balance_data.get('playPasses')
 
                     print(
-                        f'\nБаланс вашего аккаунта: {avilable_balance}\nКол-во доступных игр на вашем аккаунте: {game_passes}')
+                        f'\nБаланс вашего аккаунта: {available_balance}\nКол-во доступных игр на вашем аккаунте: {game_passes}')
 
                     while True:
                         games_count = int(input(f'\nВыберите кол-во игр которое хотите сыграть: '))
@@ -96,7 +97,7 @@ def main():
                         time.sleep(35)
                         blum_api.claim_reward(game_id, points)
                         print(
-                            f'[+] Игра номер {game_number} была успешно отработана!\n\nВы получили: {points}\nБаланс: {sum(map(float, [avilable_balance, points]))}')
+                            f'[+] Игра номер {game_number} была успешно отработана!\n\nВы получили: {points}\nБаланс: {sum(map(float, [available_balance, points]))}')
                         time.sleep(1)
 
                     print('\n[+] Все игры были успешно отработаны!')
